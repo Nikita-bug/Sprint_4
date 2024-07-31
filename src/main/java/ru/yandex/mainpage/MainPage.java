@@ -1,4 +1,4 @@
-package ru.yandex.mainPage;
+package ru.yandex.mainpage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

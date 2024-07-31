@@ -1,4 +1,4 @@
-package finalProjectTests;
+package finalprojecttests;
 
 import org.junit.After;
 import org.junit.Before;
@@ -8,8 +8,8 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.yandex.BasePage;
-import ru.yandex.mainPage.MainPage;
-import ru.yandex.orderPage.OrderPage;
+import ru.yandex.mainpage.MainPage;
+import ru.yandex.orderpage.OrderPage;
 
 import java.time.Duration;
 
@@ -17,9 +17,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(Parameterized.class)
-public class OrderPageTest {
-
-    private WebDriver driver;
+public class OrderPageTest extends BasePage {
 
 
     private final String foreName;
@@ -54,12 +52,12 @@ public class OrderPageTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        BasePage.driver = driver;
+
     }
 
 
     @Test
-    public void checkingOrderPath1() {
+    public void checkingOrderPathInTop() {
         MainPage mainPage = new MainPage();
         OrderPage orderPage = new OrderPage();
         mainPage.openMainPage();
@@ -70,11 +68,11 @@ public class OrderPageTest {
         orderPage.fillRentFields(rentDate, comment);
         orderPage.clickOrderConfirmationButton();
         String modalText = orderPage.textInHeader();
-        assertThat("Дефект в GoogleChrome",modalText, containsString(expectedText));
+        assertThat("Дефект в GoogleChrome", modalText, containsString(expectedText));
     }
 
     @Test
-    public void checkingOrderPath2() {
+    public void checkingOrderPathInMiddle() {
         MainPage mainPage = new MainPage();
         OrderPage orderPage = new OrderPage();
         mainPage.openMainPage();
@@ -86,7 +84,7 @@ public class OrderPageTest {
         orderPage.fillRentFields(rentDate, comment);
         orderPage.clickOrderConfirmationButton();
         String modalText = orderPage.textInHeader();
-        assertThat("Дефект в GoogleChrome",modalText, containsString(expectedText));
+        assertThat("Дефект в GoogleChrome", modalText, containsString(expectedText));
     }
 
     @After

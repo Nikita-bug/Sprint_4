@@ -1,4 +1,4 @@
-package ru.yandex.orderPage;
+package ru.yandex.orderpage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
