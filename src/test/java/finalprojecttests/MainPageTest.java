@@ -65,9 +65,9 @@ public class MainPageTest extends BasePage {
         //Коллекция с фактическими значениями
         List<FAQElement> actualValues = mainPage.getFAQList();
         for (int i = 0; i < actualValues.size(); i++) {
-            if (actualValues.get(i).getTitle().equals(expectedValues.getTitle())) {
-                assertEquals(actualValues.get(i).getTitle(), expectedValues.getTitle());
-                assertEquals(actualValues.get(i).getDescription(), expectedValues.getDescription());
+            if (expectedValues.getTitle().equals(actualValues.get(i).getTitle())) {
+                assertEquals(expectedValues.getTitle(), actualValues.get(i).getTitle());
+                assertEquals(expectedValues.getDescription(), actualValues.get(i).getDescription());
             }
         }
     }
